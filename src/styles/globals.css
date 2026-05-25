@@ -1,0 +1,104 @@
+/* Global styles for the Kyrgyzstan minerals educational app */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base typography ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', 'system-ui', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* ── Leaflet popup custom styling ── */
+.leaflet-popup-content-wrapper {
+  border-radius: 16px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid #e7e5e4;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 16px !important;
+  font-family: 'Inter', sans-serif;
+}
+
+.leaflet-popup-tip-container {
+  margin-top: -1px;
+}
+
+.leaflet-popup-close-button {
+  color: #78716c !important;
+  font-size: 18px !important;
+  top: 8px !important;
+  right: 8px !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #292524 !important;
+}
+
+/* ── Smooth scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f5f5f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #a8a29e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #78716c;
+}
+
+/* ── Dark mode scrollbar ── */
+.dark ::-webkit-scrollbar-track {
+  background: #1c1917;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #44403c;
+}
+
+/* ── Focus ring for accessibility ── */
+:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+}
+
+/* ── Forest color utilities not covered by Tailwind config ── */
+@layer utilities {
+  .bg-forest-50 { background-color: #f0fdf4; }
+  .bg-forest-100 { background-color: #dcfce7; }
+  .bg-forest-600 { background-color: #16a34a; }
+  .bg-forest-700 { background-color: #15803d; }
+  .bg-forest-900 { background-color: #14532d; }
+  .text-forest-400 { color: #4ade80; }
+  .text-forest-600 { color: #16a34a; }
+  .text-forest-700 { color: #15803d; }
+  .border-forest-100 { border-color: #dcfce7; }
+  .border-forest-400 { border-color: #4ade80; }
+  .border-forest-500 { border-color: #22c55e; }
+  .border-forest-700 { border-color: #15803d; }
+  .border-forest-800 { border-color: #166534; }
+  .hover\:bg-forest-50:hover { background-color: #f0fdf4; }
+  .hover\:bg-forest-500:hover { background-color: #22c55e; }
+  .hover\:text-forest-400:hover { color: #4ade80; }
+  .hover\:text-forest-700:hover { color: #15803d; }
+  .hover\:border-forest-400:hover { border-color: #4ade80; }
+  .dark\:bg-forest-900\/20:is(.dark *) { background-color: rgba(20, 83, 45, 0.2); }
+  .dark\:border-forest-800:is(.dark *) { border-color: #166534; }
+  .dark\:hover\:bg-forest-900\/30:is(.dark *):hover { background-color: rgba(20, 83, 45, 0.3); }
+}
